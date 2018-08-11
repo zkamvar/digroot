@@ -22,8 +22,8 @@ This package was inspired by a [Tweet from Thomas Morill](https://twitter.com/ts
 For example, the digital root of 77 is 5:
 
 ```{r digroot}
-7 + 7 # 14
-1 + 4 #  5
+7 + 7
+1 + 4
 ```
 
 The *digroot* package automates this with the `dig_root()` function:
@@ -31,6 +31,14 @@ The *digroot* package automates this with the `dig_root()` function:
 ```{r dig_root}
 digroot::dig_root(77)
 ```
+
+It's also vectorized, which means that you can get the multiplication
+table like so:
+
+```{r multiply}
+sapply(1:9, function(i) digroot::dig_root(i * (1:9)))
+```
+
 
 You can find the immediate digital sum of a number by using the `dig_sum()`
 function:
