@@ -1,0 +1,51 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+# digroot
+
+The goal of digroot is to calculate digital roots. A digital root is a single
+digit that is obtained through a recursive sum of digits.
+
+This package was inspired by a [Tweet from Thomas Morill](https://twitter.com/tsmorrill/status/1028108510746226688)
+
+For example, the digital root of 77 is 5:
+
+```{r digroot}
+7 + 7 # 14
+1 + 4 #  5
+```
+
+The *digroot* package automates this with the `dig_root()` function:
+
+```{r dig_root}
+digroot::dig_root(77)
+```
+
+You can find the immediate digital sum of a number by using the `dig_sum()`
+function:
+
+```{r dig_sum}
+digroot::dig_sum(77)
+digroot::dig_sum(14)
+```
+
+## Installation
+
+You can install digroot from github with:
+
+```{r gh-installation, eval = FALSE}
+# install.packages("remotes")
+remotes::install_github("zkamvar/digroot")
+```
+
