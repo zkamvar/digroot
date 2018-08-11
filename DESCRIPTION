@@ -1,0 +1,14 @@
+Package: digroot
+Title: Calculate Digital Roots of Integers
+Version: 0.1.0.9000
+Authors@R: c(person("Zhian N.", "Kamvar", email = "zkamvar@gmail.com", role = c("aut", "cre")),
+  person("Thomas", "Morrill", role = "ctb"))
+Description: A digital root is a single-digit integer that represents the 
+  recursive sum of all the digits of an integer of any length.
+Depends: R (>= 3.0.0)
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 6.1.0
+Suggests: roxygen2
