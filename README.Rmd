@@ -14,6 +14,8 @@ knitr::opts_chunk$set(
 
 # digroot
 
+[![Travis-CI Build Status](https://travis-ci.org/zkamvar/digroot.svg?branch=master)](https://travis-ci.org/zkamvar/digroot)
+
 The goal of digroot is to calculate digital roots. A digital root is a single
 digit that is obtained through a recursive sum of digits.
 
@@ -36,16 +38,27 @@ It's also vectorized, which means that you can get the multiplication
 table like so:
 
 ```{r multiply}
-sapply(1:9, function(i) digroot::dig_root(i * (1:9)))
+print(mult <- outer(1:9, 1:9))
+matrix(digroot::dig_root(mult), ncol = 9, nrow = 9)
 ```
 
+It can also work on really large numbers:
+
+```{r bit}
+set.seed(2018-08-12)
+print(bignum <- paste0(sample(1e10, 100), collapse = ""))
+digroot::dig_root(bignum)
+```
+
+> For reference, that number is `r paste0(substr(bignum, 1, 1), ".", substr(bignum, 2, 3), "e", nchar(bignum) - 1)`
 
 You can find the immediate digital sum of a number by using the `dig_sum()`
 function:
 
 ```{r dig_sum}
-digroot::dig_sum(77)
-digroot::dig_sum(14)
+print(s   <- digroot::dig_sum(bignum))
+print(ss  <- digroot::dig_sum(s))
+print(sss <- digroot::dig_sum(ss))
 ```
 
 ## Installation
