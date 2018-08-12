@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 The goal of digroot is to calculate digital roots. A digital root is a single
 digit that is obtained through a recursive sum of digits.
 
-This package was inspired by a [Tweet from Thomas Morill](https://twitter.com/tsmorrill/status/1028108510746226688)
+This package was inspired by a [Tweet from Thomas Morrill](https://twitter.com/tsmorrill/status/1028108510746226688)
 
 For example, the digital root of 77 is 5:
 
