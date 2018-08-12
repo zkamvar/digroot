@@ -16,7 +16,8 @@
 #' dig_root(77) # 7 + 7 = 14; 1 + 4 = 5;
 #'
 #' # Get the multiplication table of digital roots
-#' sapply(1:9, function(i) dig_root(i * 1:9))
+#' print(mult <- outer(1:9, 1:9))
+#' matrix(dig_root(mult), ncol = 9, nrow = 9)
 dig_root <- function(x) {
 	x <- assert_integer(x)
 	n <- nchar(x)
