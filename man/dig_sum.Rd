@@ -4,16 +4,23 @@
 \alias{dig_sum}
 \title{Sum the digits of a number}
 \usage{
-dig_sum(x)
+dig_sum(x, return_char = FALSE)
 }
 \arguments{
 \item{x}{an integer}
+
+\item{return_char}{when \code{TRUE}, the result is returned as a character
+string. Defaults to \code{FALSE}, returning an integer.}
 }
 \value{
 the sum of all the individual digits of that integer
 }
 \description{
 Sum the digits of a number
+}
+\details{
+This function works by splitting the number into its component
+digits, and creating a call to R that sums them.
 }
 \examples{
 dig_sum(10)  # 1

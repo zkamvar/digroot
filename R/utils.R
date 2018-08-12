@@ -17,10 +17,9 @@ eval_sum_strings <- function(x) {
 }
 
 assert_integer <- function(x) {
-	xo <- x
-	x  <- as.integer(x)
-	if (!identical(all.equal(x, xo), TRUE)) {
-		stop("x must be an integer")
+	xc <- as.character(x)
+	if (any(grepl('[^0-9]', xc))) {
+		stop("x does not appear to be an integer", call. = FALSE)
 	}
-	x
+	xc
 }
