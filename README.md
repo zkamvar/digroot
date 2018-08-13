@@ -5,9 +5,9 @@ digroot
 
 [![Travis-CI Build Status](https://travis-ci.org/zkamvar/digroot.svg?branch=master)](https://travis-ci.org/zkamvar/digroot)
 
-The goal of digroot is to calculate digital roots. A digital root is a single digit that is obtained through a recursive sum of digits.
+The goal of digroot is to calculate digital roots. A digital root is a single digit that is obtained through a recursive sum of digits. This coincides with taking the remainder modulo nine, except for integers which are divisible by nine.
 
-This package was inspired by a [Tweet from Thomas Morill](https://twitter.com/tsmorrill/status/1028108510746226688)
+This package was inspired by a [Tweet from Thomas Morrill](https://twitter.com/tsmorrill/status/1028108510746226688)
 
 For example, the digital root of 77 is 5:
 
@@ -23,6 +23,23 @@ The *digroot* package automates this with the `dig_root()` function:
 ``` r
 digroot::dig_root(77)
 #> [1] 5
+```
+
+These examples demonstrate the digital root's relationship to modular arithmetic:
+
+``` r
+digroot::dig_root(77)
+#> [1] 5
+77 %% 9
+#> [1] 5
+digroot::dig_root(729)
+#> [1] 9
+729 %% 9
+#> [1] 0
+digroot::dig_root(0)
+#> [1] 0
+0 %% 9
+#> [1] 0
 ```
 
 It's also vectorized, which means that you can get the multiplication table like so:

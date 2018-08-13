@@ -38,13 +38,13 @@ digroot::dig_root(77)
 
 These examples demonstrate the digital root's relationship to modular
 arithmetic:
-```{r dig_root}
+```{r dig_root_mod}
 digroot::dig_root(77)
-77 % 9
+77 %% 9
 digroot::dig_root(729)
-729 % 9
-digroot::digroot(0)
-0 % 9
+729 %% 9
+digroot::dig_root(0)
+0 %% 9
 ```
 
 It's also vectorized, which means that you can get the multiplication
